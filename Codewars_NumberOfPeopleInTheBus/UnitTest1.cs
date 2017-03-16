@@ -1,7 +1,5 @@
 ﻿using NUnit.Framework;
-using System;
 using System.Collections.Generic;
-using NUnit.Framework.Internal.Commands;
 
 namespace Codewars_NumberOfPeopleInTheBus
 {
@@ -11,8 +9,13 @@ namespace Codewars_NumberOfPeopleInTheBus
         [Test]
         public void only_1_station()
         {
-            var p = new List<int[]>() {new[] {10, 1}};
-            Assert.AreEqual(9, Kata.Number(p));
+            var p = new List<int[]>() { new[] { 10, 1 } };
+            RemainPassengerShouldBe(p, 9);
+        }
+
+        private static void RemainPassengerShouldBe(List<int[]> p, int expected)
+        {
+            Assert.AreEqual(expected, Kata.Number(p));
         }
 
         [Ignore("codewars")]
