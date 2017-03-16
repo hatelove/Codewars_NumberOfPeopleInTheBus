@@ -78,6 +78,12 @@ namespace Codewars_NumberOfPeopleInTheBus
             {
                 var station2 = peopleListInOut[1];
                 remainPassengerCount += station2[0] - station2[1];
+
+                if (peopleListInOut.Count > 2)
+                {
+                    var station3 = peopleListInOut[2];
+                    remainPassengerCount += station3[0] - station3[1];
+                }
             }
 
             return remainPassengerCount;
