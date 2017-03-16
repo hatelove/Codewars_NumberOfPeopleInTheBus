@@ -44,8 +44,8 @@ namespace Codewars_NumberOfPeopleInTheBus
     {
         public static int Number(List<int[]> peopleListInOut)
         {
-            // Happy Coding
-            throw new NotImplementedException();
+            var station = peopleListInOut[0];
+            return station[0] - station[1];
         }
     }
 }
