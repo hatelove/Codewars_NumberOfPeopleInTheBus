@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Codewars_NumberOfPeopleInTheBus
 {
@@ -43,7 +44,6 @@ namespace Codewars_NumberOfPeopleInTheBus
             Assert.AreEqual(expected, Kata.Number(p));
         }
 
-        [Ignore("codewars")]
         [Test]
         public void FirstTest()
         {
@@ -51,7 +51,6 @@ namespace Codewars_NumberOfPeopleInTheBus
             Assert.AreEqual(5, Kata.Number(peopleList));
         }
 
-        [Ignore("codewars")]
         [Test]
         public void SecondTest()
         {
@@ -59,7 +58,6 @@ namespace Codewars_NumberOfPeopleInTheBus
             Assert.AreEqual(17, Kata.Number(peopleList));
         }
 
-        [Ignore("codewars")]
         [Test]
         public void ThirdTest()
         {
@@ -72,14 +70,8 @@ namespace Codewars_NumberOfPeopleInTheBus
     {
         public static int Number(List<int[]> peopleListInOut)
         {
-            var remainPassengerCount = 0;
-            for (int i = 0; i < peopleListInOut.Count; i++)
-            {
-                var station = peopleListInOut[i];
-                remainPassengerCount += RemainPassengerCountOfCurrentStation(station);
-            }
-
-            return remainPassengerCount;
+            return peopleListInOut.Aggregate(0,
+                (s, x) => s + RemainPassengerCountOfCurrentStation(x));
         }
 
         private static int RemainPassengerCountOfCurrentStation(int[] station)
