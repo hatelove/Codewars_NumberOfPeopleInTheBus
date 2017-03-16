@@ -8,6 +8,13 @@ namespace Codewars_NumberOfPeopleInTheBus
     [TestFixture]
     public class MyTest
     {
+        [Test]
+        public void only_1_station()
+        {
+            var p = new List<int[]>() {new[] {10, 1}};
+            Assert.AreEqual(9, Kata.Number(p));
+        }
+
         [Ignore("codewars")]
         [Test]
         public void FirstTest()
