@@ -72,18 +72,11 @@ namespace Codewars_NumberOfPeopleInTheBus
     {
         public static int Number(List<int[]> peopleListInOut)
         {
-            var station = peopleListInOut[0];
-            var remainPassengerCount = RemainPassengerCountOfCurrentStation(station);
-            if (peopleListInOut.Count > 1)
+            var remainPassengerCount = 0;
+            for (int i = 0; i < peopleListInOut.Count; i++)
             {
-                var station2 = peopleListInOut[1];
-                remainPassengerCount += RemainPassengerCountOfCurrentStation(station2);
-
-                if (peopleListInOut.Count > 2)
-                {
-                    var station3 = peopleListInOut[2];
-                    remainPassengerCount += RemainPassengerCountOfCurrentStation(station3);
-                }
+                var station = peopleListInOut[i];
+                remainPassengerCount += RemainPassengerCountOfCurrentStation(station);
             }
 
             return remainPassengerCount;
