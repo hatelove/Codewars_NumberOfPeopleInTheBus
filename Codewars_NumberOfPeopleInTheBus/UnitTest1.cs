@@ -60,7 +60,14 @@ namespace Codewars_NumberOfPeopleInTheBus
         public static int Number(List<int[]> peopleListInOut)
         {
             var station = peopleListInOut[0];
-            return station[0] - station[1];
+            var remainPassengerCount = station[0] - station[1];
+            if (peopleListInOut.Count > 1)
+            {
+                var station2 = peopleListInOut[1];
+                remainPassengerCount += station2[0] - station2[1];
+            }
+
+            return remainPassengerCount;
         }
     }
 }
