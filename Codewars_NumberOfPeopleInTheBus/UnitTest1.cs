@@ -13,6 +13,18 @@ namespace Codewars_NumberOfPeopleInTheBus
             RemainPassengerShouldBe(p, 9);
         }
 
+        [Test]
+        public void there_were_2_stations()
+        {
+            var p = new List<int[]>()
+            {
+                new[] { 10, 1 },
+                new[] { 3, 5 },
+            };
+
+            RemainPassengerShouldBe(p, 7);
+        }
+
         private static void RemainPassengerShouldBe(List<int[]> p, int expected)
         {
             Assert.AreEqual(expected, Kata.Number(p));
